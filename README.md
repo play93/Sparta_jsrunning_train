@@ -12,22 +12,31 @@
 
 ```javascript
 1. let uninitialized;
-console.log(uninitialized); // 결과값 < 빈칸 >
+console.log(uninitialized); // 결과값 < undifined >
+//값을 지정하지 않아서 
 
-
-2. < 빈칸 > apple = "사과";
+2. < const > apple = "사과";
 apple = "바나나"; // TypeError: Assignment to constant variable
-
+/* 
+에러 번역 : 상수변수에 할당
+이므로 apple은 상수변수
+따라서 상수값으로 선언하는 const
+*/
 
 3. let lotto = [3, 8, 13, 19, 21, 32];
-console.log(lotto[3]); // 결과값 < 빈칸 >
-
+console.log(lotto[3]); // 결과값 < 19 >
+//배열의 순서는 0(오프셋)부터 시작하므로 19
 
 4. 
-let mySchedule = "";
-console.log(mySchedule || false); // < 빈칸 >
-console.log(!!mySchedule); // < 빈칸 >
+let mySchedule = ""; //undefined
+console.log(mySchedule || false); // < false >
+/* || or연산자는 한쪽이 true일때 true를 리턴, 둘다 false일때 false를 리턴하는데 mySchedule의 값이 undefined이므로 false로 리턴*/
 
+console.log(!!mySchedule); // < false >
+/*
+!!연산자는 값을 boolean(true/false)타입으로 형변환 하는것
+mySchedule의 값은 undefined이므로 false 리턴
+*/
 ```
 
 
@@ -43,13 +52,17 @@ console.log(!!mySchedule); // < 빈칸 >
 예시
 
 ```javascript
-const junhyun = {
+const yeonju = {
     // 조건을 충족하는 코드 작성
+    name: "홍연주",
+    age: 32,
+    mbti: "ISTP"
 };
 
-console.log(이름이 나오게 콘솔을 실행시켜 주세요.);
-console.log(나이가 나오게 콘솔을 실행시켜 주세요.);
-console.log(MBTI가 나오게 콘솔을 실행시켜 주세요.);
+console.log(yeonju['name']);
+console.log(yeonju['age']); //''로 안감싸면 undefined가 뜸
+console.log(yeonju['mbti']);
+
 ```
 
 
@@ -61,12 +74,19 @@ console.log(MBTI가 나오게 콘솔을 실행시켜 주세요.);
 예시
 
 ```javascript
-function 함수명(매개변수) {
+function numSet(s) {
     // 코드를 작성해 주세요.
+
+    if(s % 2 === 0){ //2로 나누었을 때 나머지가 0이면 짝수
+        return s = "홀수"
+    }else{//그렇지 않으면 홀수
+        return s = "짝수"
+    }
+
 }
 
-console.log(함수명(10)); // 결과값 "짝수";
-console.log(함수명(7)); // 결과값 "홀수";
+console.log(numSet(10)); // 결과값 "짝수";
+console.log(numSet(7)); // 결과값 "홀수";
 ```
 
 
@@ -78,14 +98,23 @@ console.log(함수명(7)); // 결과값 "홀수";
 
 예시
 ```javascript
-function 함수명(매개변수1, 매개변수2, 매개변수3) {
+function calculate(a, b, c) {
     // 코드를 작성해주세요.
+    if(b="+"){
+        return a + c;
+    }else if(b="-"){
+        return a - c;
+    }else if(b="*"){
+        return a * c;
+    }else if(b="/"){
+        return a / c;
+    }
 }
 
-함수명(3, "+", 6); // 결과값 9
-함수명(11, "-", 6); // 결과값 5
-함수명(6, "*", 3); // 결과값 18
-함수명(15, "/", 3); // 결과값 5
+calculate(3, "+", 6); // 결과값 9
+calculate(11, "-", 6); // 결과값 5
+calculate(6, "*", 3); // 결과값 18
+calculate(15, "/", 3); // 결과값 5
 ```
 
 &nbsp;
