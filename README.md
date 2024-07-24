@@ -78,9 +78,9 @@ function numSet(s) {
     // 코드를 작성해 주세요.
 
     if(s % 2 === 0){ //2로 나누었을 때 나머지가 0이면 짝수
-        return s = "홀수"
+        return "짝수"
     }else{//그렇지 않으면 홀수
-        return s = "짝수"
+        return "홀수"
     }
 
 }
@@ -100,13 +100,13 @@ console.log(numSet(7)); // 결과값 "홀수";
 ```javascript
 function calculate(a, b, c) {
     // 코드를 작성해주세요.
-    if(b="+"){
+    if(b === "+"){
         return a + c;
-    }else if(b="-"){
+    }else if(b === "-"){
         return a - c;
-    }else if(b="*"){
+    }else if(b === "*"){
         return a * c;
-    }else if(b="/"){
+    }else if(b === "/"){
         return a / c;
     }
 }
